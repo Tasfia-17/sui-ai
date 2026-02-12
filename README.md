@@ -56,17 +56,7 @@ cp .env.local.example .env.local
 npm run dev
 ```
 
-Visit `http://localhost:3000`
 
-## 🔧 Environment Variables
-
-```env
-SUI_NETWORK=testnet
-AGENT_OS_PACKAGE_ID=0x28ce397d89df41d74d40d178fa60b3de7c2edea82e853d5cbe5baee8caf00e0a
-MARKETPLACE_ID=0xf6d708458f43d88cf04cf52de10a6520ca7b3477cc09c145b5fc36c1c77e4ca2
-NEXT_PUBLIC_SUI_NETWORK=testnet
-NEXT_PUBLIC_PACKAGE_ID=0x28ce397d89df41d74d40d178fa60b3de7c2edea82e853d5cbe5baee8caf00e0a
-```
 
 ## 🏗️ Project Structure
 
@@ -145,13 +135,7 @@ sui move build
 ./scripts/deploy.sh
 ```
 
-## 🎨 Design System
 
-The project features a custom Blade Runner-inspired design system with:
-- Cyberpunk color palette
-- Pixel art typography
-- Glassmorphic UI elements
-- Smooth animations
 
 ## 🤝 Contributing
 
