@@ -10,7 +10,7 @@ A decentralized marketplace for discovering, deploying, and trading AI agents as
 - **Voice Commands** - Natural language interface for agent interactions
 - **Smart Contract Execution** - Agents execute strategies using Sui PTBs
 - **Creator Royalties** - 5% royalty system for agent creators
-- **Blade Runner UI** - Unique cyberpunk-inspired design aesthetic
+-
 
 ## 🚀 Live Demo
 
