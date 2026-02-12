@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 280 30% 96%;
+    --foreground: 280 40% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 280 40% 20%;
+    --primary: 340 75% 65%;
+    --secondary: 200 75% 65%;
+    --accent: 45 85% 70%;
+    --muted: 280 20% 85%;
+    --border: 280 30% 75%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    image-rendering: pixelated;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Soft Pixel Sky */
+.pixel-sky {
+  background: linear-gradient(180deg, 
+    #FFE8F5 0%,
+    #FFF0E8 25%,
+    #FFFAEB 50%,
+    #E8F5FF 75%,
+    #F0E8FF 100%
+  );
+}
+
+/* Soft Clouds */
+.pixel-clouds {
+  background-image: 
+    radial-gradient(ellipse, rgba(255, 255, 255, 0.8) 30%, transparent 30%),
+    radial-gradient(ellipse, rgba(255, 255, 255, 0.7) 25%, transparent 25%);
+  background-size: 120px 60px, 100px 50px;
+  background-position: 0 30%, 60% 60%;
+  animation: cloudDrift 40s linear infinite;
+}
+
+@keyframes cloudDrift {
+  0% { background-position: 0 30%, 60% 60%; }
+  100% { background-position: 1000px 30%, 1060px 60%; }
+}
+
+/* Modern Pixel Card */
+.pixel-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid #87CEEB;
+  box-shadow: 
+    0 0 0 1px rgba(135, 206, 235, 0.3),
+    6px 6px 0 0 rgba(135, 206, 235, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.pixel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 0 0 1px rgba(135, 206, 235, 0.4),
+    8px 8px 0 0 rgba(135, 206, 235, 0.25),
+    0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Modern Pixel Button */
+.pixel-btn {
+  border: 3px solid currentColor;
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    4px 4px 0 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.pixel-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    6px 6px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    2px 2px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Pixel Avatar */
+.pixel-avatar {
+  background: linear-gradient(135deg, #E8F5FF 0%, #F0E8FF 100%);
+  border: 3px solid #A78BFA;
+  box-shadow: 
+    0 0 0 1px rgba(167, 139, 250, 0.3),
+    4px 4px 0 0 rgba(167, 139, 250, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: avatarFloat 3s ease-in-out infinite;
+}
+
+@keyframes avatarFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Soft Gradient Text */
+.pixel-gradient {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FFA07A 25%, #FFD93D 50%, #6BCF7F 75%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientFlow 8s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Soft Grid */
+.pixel-grid {
+  background-image: 
+    linear-gradient(rgba(255, 158, 199, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 158, 199, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Soft Glow */
+.pixel-glow {
+  box-shadow: 
+    0 0 20px rgba(255, 158, 199, 0.3),
+    0 0 40px rgba(255, 158, 199, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Pixel Stars */
+.pixel-stars {
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 215, 0, 0.6), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(255, 182, 193, 0.6), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(173, 216, 230, 0.6), transparent),
+    radial-gradient(1px 1px at 80% 10%, rgba(255, 218, 185, 0.6), transparent);
+  background-size: 250px 250px;
+  animation: starTwinkle 6s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Pixel Sun */
+.pixel-sun {
+  background: radial-gradient(circle, #FFE66D 0%, #FFB347 60%, #FF9A8B 100%);
+  border: 3px solid #FFB347;
+  box-shadow: 
+    0 0 30px rgba(255, 179, 71, 0.4),
+    0 0 60px rgba(255, 179, 71, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Pixel Moon */
+.pixel-moon {
+  background: radial-gradient(circle at 35% 35%, #FFFACD 0%, #FFE4B5 50%, #FFDAB9 100%);
+  border: 3px solid #DEB887;
+  box-shadow: 
+    0 0 20px rgba(255, 250, 205, 0.4),
+    inset -8px -8px 0 rgba(222, 184, 135, 0.2);
+  border-radius: 50%;
+}
+
+/* Soft Ocean */
+.pixel-ocean {
+  background: linear-gradient(180deg, #E0F7FA 0%, #B2EBF2 50%, #80DEEA 100%);
+}
+
+/* Soft Waves */
+.pixel-waves {
+  background: 
+    linear-gradient(90deg, transparent 48%, rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.4) 52%, transparent 52%);
+  background-size: 32px 6px;
+  animation: waveFlow 3s linear infinite;
+}
+
+@keyframes waveFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: 32px 0; }
+}
+
+/* Soft Mountains */
+.pixel-mountains {
+  background: 
+    linear-gradient(135deg, transparent 48%, rgba(255, 182, 193, 0.3) 48%, rgba(255, 182, 193, 0.3) 52%, transparent 52%),
+    linear-gradient(45deg, transparent 48%, rgba(255, 192, 203, 0.25) 48%, rgba(255, 192, 203, 0.25) 52%, transparent 52%);
+  background-size: 180px 180px, 160px 160px;
+  background-position: 0 100%, 90px 100%;
+  background-repeat: repeat-x;
+}
+
+/* Blink Animation */
+.pixel-blink {
+  animation: softBlink 2s ease-in-out infinite;
+}
+
+@keyframes softBlink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.5; }
+}
+
+/* Section Divider */
+.pixel-divider {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #FF9EC7 0px,
+    #FF9EC7 12px,
+    transparent 12px,
+    transparent 24px
+  );
+}
+
+/* Badge */
+.pixel-badge {
+  background: linear-gradient(135deg, #FFE8F5 0%, #FFF0E8 100%);
+  border: 2px solid #FF9EC7;
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  box-shadow: 2px 2px 0 0 rgba(255, 158, 199, 0.2);
+}
+
+/* Progress Bar */
+.pixel-progress {
+  height: 8px;
+  background: rgba(255, 158, 199, 0.2);
+  border: 2px solid #FF9EC7;
+  overflow: hidden;
+}
+
+.pixel-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6B9D 0%, #FFA07A 100%);
+  animation: progressPulse 2s ease-in-out infinite;
+}
+
+@keyframes progressPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
